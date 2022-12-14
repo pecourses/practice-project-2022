@@ -1,11 +1,10 @@
-FROM node:16.15.1-alpine3.16
+FROM node:14.16.1-alpine3.13
 
 ARG NODE_ENV="development"
 
-RUN mkdir /server \
-    && mkdir -p /public/images
+RUN mkdir /server
 
-RUN mkdir -p /var/www/html/images 
+RUN mkdir -p /var/www/html/images
 
 WORKDIR /server
 
@@ -16,10 +15,8 @@ RUN npm install -g sequelize-cli
 
 RUN npm install
 
-RUN chown -R node:node /server/node_modules
-
 COPY . .
 
-EXPOSE 3000
+EXPOSE 5000
 
 CMD sequelize db:migrate && sequelize db:seed:all && npm start

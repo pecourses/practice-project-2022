@@ -34,7 +34,7 @@ const Home = props => {
     <>
       <Header />
       {isFetching ? (
-        <Spinner />
+        <Spinner mtop />
       ) : (
         <>
           <div className={styles.container}>
