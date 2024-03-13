@@ -11,7 +11,7 @@ module.exports = {
       {
         cardNumber: '4111111111111111',
         name: 'yriy',
-        expiry: '09/23',
+        expiry: '09/25',
         cvc: '505',
         balance: 5000,
       },
